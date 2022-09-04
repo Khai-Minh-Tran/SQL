@@ -2,10 +2,15 @@
 SELECT COUNT(orderid)
 FROM BIT_DB.JanSales
 
-#2. How many of those orders were for an iPhone? 
+
+
+#2. How many of those orders between 01/10/2019 and 01/18/2019 were for an iPhone? 
 SELECT COUNT(orderid)
 FROM BIT_DB.JanSales
 WHERE Product='iPhone'
+AND orderdate BETWEEN '01/10/19 00:00' AND '01/18/19 00:00'
+
+
 
 #3. Select the customer account numbers for all the orders that were placed in February. 
 SELECT acctnum
@@ -13,6 +18,7 @@ FROM BIT_DB.customers cu
 
 INNER JOIN BIT_DB.FebSales fs
 ON cu.order_ID = fs.orderID
+
 
 
 #4. Which product was the cheapest one sold in January, and what was the price? 
@@ -28,11 +34,16 @@ FROM BIT_DB.JanSales
 LIMIT 1;
 
 
-#5. What is the total revenue for each product sold in January?
+
+#5. What is the total revenue for each product sold on 01/18/2019?
 SELECT product, 
+       orderdate,
        sum(quantity)*price as total_revenue
 FROM BIT_DB.JanSales
-GROUP BY product;
+WHERE orderdate like '01/18/19%'
+GROUP BY product
+ORDER BY orderdate;
+
 
 
 #6. Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
@@ -42,6 +53,8 @@ SELECT product,
 FROM BIT_DB.FebSales
 WHERE location = '548 Lincoln St, Seattle, WA 98101'
 GROUP BY product;
+
+
 
 #7. How many customers ordered more than 2 products at a time, and what was the average amount spent for those customers? 
 SELECT count(cust.acctnum) as num_customers,
