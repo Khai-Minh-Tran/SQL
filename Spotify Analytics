@@ -1,4 +1,4 @@
-# For this project, I downloaded and analyzed Spotify data from Kaggle (link below).
+# For this project, I downloaded Spotify data from Kaggle (link below).
 # https://www.kaggle.com/datasets/equinxx/spotify-top-50-songs-in-2021?select=spotify_top50_2021.csv
 # Then, I created a table to insert Spotify data into.
 # Finally, I performed analytics and data exploration using SQL.
