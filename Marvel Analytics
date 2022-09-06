@@ -1,7 +1,6 @@
 # I'm a big Marvel fan. So why not explore the Marvel superhero characters dataset and pull out some interesting facts.
 
 
-
 #Creating the table:
 CREATE TABLE marvels (ID INTEGER PRIMARY KEY,
     name TEXT,
