@@ -109,6 +109,3 @@ SELECT sum(
           CASE WHEN liveness <= 0.1
           THEN 1 ELSE 0 END) AS low_liveness
 FROM BIT_DB.SpotifyData;
-
-
-
