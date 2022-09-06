@@ -75,12 +75,12 @@ LIMIT 10;
 
 
 #5. How many songs have acousticness higher and lower than 0.02?
-SELECT sum(
-         case when acousticness > 0.02
-         then 1 else 0 end) AS tracks_higher,
+SELECT SUM(
+         CASE WHEN acousticness > 0.02
+         THEN 1 ELSE 0 END) AS tracks_higher,
        sum(
-         case when acousticness < 0.02
-         then 1 else 0 end) AS tracks_lower
+         CASE WHEN acousticness < 0.02
+         THEN 1 ELSE 0 END) AS tracks_lower
 FROM BIT_DB.Spotifydata
 
 
