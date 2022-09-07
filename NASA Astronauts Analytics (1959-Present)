@@ -1,0 +1,39 @@
+# I just finished a wonderfully insightful trip to the Kennedy Space Center on Merritt Island, Florida.
+# That sparked an idea: How amazing it must be to go through all the rigorous trainings, obstacles, and challenges in order to become an astronaut?
+# Why don't we study and analyze the data of all NASA austronauts in history and pull out some interesting facts?
+
+
+/*
+Source:
+  https://www.kaggle.com/nasa/astronaut-yearbook
+*/
+
+
+CREATE TABLE astronauts(
+   Name                TEXT PRIMARY KEY,
+   Year                INTEGER,
+   GroupNum            INTEGER,
+   Status              TEXT,
+   Birth_Date          TEXT,
+   Birth_Place         TEXT,
+   Gender              TEXT,
+   Alma_Mater          TEXT,
+   Undergraduate_Major TEXT,
+   Graduate_Major      TEXT,
+   Military_Rank       TEXT,
+   Military_Branch     TEXT,
+   Space_Flights       INTEGER,
+   Space_Flight_hr     INTEGER,
+   Space_Walks         INTEGER,
+   Space_Walks_hr      REAL,
+   Missions            TEXT,
+   Death_Date          TEXT, 
+   Death_Mission       TEXT
+);
+
+
+# Then I imported the data from astronauts.csv into SQLite Studio.
+# Let's explore this universe of data!
+
+
+# 1. 
