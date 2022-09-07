@@ -32,7 +32,7 @@ CREATE TABLE astronauts(
 
 
 # Then I imported the data from astronauts.csv into SQLite Studio.
-# Let's explore this universe of data!
+# Let's explore this data universe!
 
 
 # 1. 
