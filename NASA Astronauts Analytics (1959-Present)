@@ -61,7 +61,7 @@ FROM astronauts
 
 
 
-# 2. Which astronauts studied Engineering, for both undergraduate and graduate levels, at a public university in Texas?
+# 2. Which astronauts studied Engineering, for both undergraduate and graduate levels, at a member school of the Texas public college system?
 SELECT name, 
        alma_mater, 
        undergraduate_major,
