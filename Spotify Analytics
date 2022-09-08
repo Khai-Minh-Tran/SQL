@@ -109,3 +109,20 @@ SELECT sum(
           CASE WHEN liveness <= 0.1
           THEN 1 ELSE 0 END) AS low_liveness
 FROM BIT_DB.SpotifyData;
+
+
+
+#8. Calculate the average popularity for all artists. For every artist with an average popularity of 90 and above, show their names, their 
+##  average popularities, and label them as 'Ultra Popular Star.'
+WITH top_star_CTE_table AS(
+   SELECT artist_name,
+          avg(popularity) AS average_popularity
+   FROM SpotifyData 
+   GROUP BY artist_name
+   ORDER BY average_popularity DESC)
+   
+SELECT artist_name,
+       average_popularity,
+       'Ultra Popular Star' AS tag
+FROM top_star_CTE_table
+WHERE average_popularity>=90;
