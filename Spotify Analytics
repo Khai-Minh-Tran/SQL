@@ -114,7 +114,8 @@ FROM BIT_DB.SpotifyData;
 
 #8. Calculate the average popularity for all artists. For every artist with an average popularity of 90 and above, show their names, their 
 ##  average popularities, and label them as 'Ultra Popular Star.'
-WITH top_star_CTE_table AS(
+##  I will be using CTE for this.
+WITH top_star_table AS(
    SELECT artist_name,
           avg(popularity) AS average_popularity
    FROM SpotifyData 
@@ -124,5 +125,5 @@ WITH top_star_CTE_table AS(
 SELECT artist_name,
        average_popularity,
        'Ultra Popular Star' AS tag
-FROM top_star_CTE_table
+FROM top_star_table
 WHERE average_popularity>=90;
