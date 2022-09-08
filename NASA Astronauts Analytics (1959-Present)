@@ -35,4 +35,15 @@ CREATE TABLE astronauts(
 # Let's explore this data universe!
 
 
-# 1. 
+# 1. How many astronauts are males and how many are females?
+SELECT sum(
+          case when gender = 'Male'
+          then 1 else 0 end) as num_male,
+       sum(
+          case when gender = 'Female'
+          then 1 else 0 end) as num_female
+FROM astronauts
+
+
+
+#2. 
