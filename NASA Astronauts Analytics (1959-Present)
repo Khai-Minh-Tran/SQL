@@ -36,6 +36,7 @@ CREATE TABLE astronauts(
 
 
 # 1. How many astronauts are males and how many are females?
+# Additionally, how many still have active (or management) status? And how many have retired or deceased?
 SELECT sum(
           case when gender = 'Male'
           then 1 else 0 end) as num_male,
@@ -43,7 +44,34 @@ SELECT sum(
           case when gender = 'Female'
           then 1 else 0 end) as num_female
 FROM astronauts
+- - - - - - - - 
+SELECT sum(
+          case when status = 'Active'
+          then 1 else 0 end) as num_active,
+       sum(
+          case when status = 'Management'
+          then 1 else 0 end) as num_management,
+       sum(
+          case when status = 'Retired'
+          then 1 else 0 end) as num_retired,
+       sum(
+          case when status = 'Deceased'
+          then 1 else 0 end) as num_deceased
+FROM astronauts
 
 
 
-#2. 
+# 2. Which astronauts studied Engineering, for both undergraduate and graduate levels, at a public university in Texas?
+SELECT name, 
+       alma_mater, 
+       undergraduate_major,
+       graduate_major
+FROM astronauts
+WHERE undergraduate_major like '%Engineering%'  
+AND graduate_major like '%Engineering%'
+AND alma_mater like '%Texas%' 
+
+
+
+# 3. Who were born in the Midwest?
+S
