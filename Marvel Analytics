@@ -45,3 +45,48 @@ INSERT INTO marvels VALUES(23, "Ghost Rider", 86, "Good", "Male", 1.88, 99, "EUA
 INSERT INTO marvels VALUES(24, "Venon", 78, "Neutral", "Male", 1.90, 118, "EUA", 3, 4, 2, 6, 1, 4);
 INSERT INTO marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "EUA", 2, 7, 2, 7, 1, 4);
 INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
+
+
+
+#1. For all male superheroes, find the average height, weight, intelligence, strength, speed, durability, energy projection, and fighting skills.
+SELECT avg(height_m), 
+       avg(weight_kg), 
+       avg(intelligence), 
+       avg(strength), 
+       avg(speed), 
+       avg(durability), 
+       avg(energy_projection), 
+       avg(fighting_skills)
+FROM marvels 
+WHERE gender = 'Male'
+
+
+
+#2. Out of all superheroes from Earth, select all with good or neutral alignments and order them by popularity.
+SELECT popularity, 
+       name, 
+       alignment, 
+       gender, 
+       hometown
+FROM marvels 
+WHERE alignment IN ("Good", "Neutral") 
+AND hometown NOT IN ("Jotunheim", "Asgard")
+ORDER BY popularity DESC
+
+
+
+#3. If alignment is good, increase popularity by 20%. If neutral, increase by 5%. If bad, decrease by 20%.
+SELECT name, 
+       alignment, 
+       popularity,
+CASE
+   WHEN alignment = 'Good' THEN popularity + (popularity* .2)
+   WHEN alignment = 'Neutral' THEN popularity + (popularity* .05)
+   ELSE popularity - (popularity * .2)
+END AS popularityChange
+FROM marvels 
+ORDER BY popularityChange
+
+
+
+#4. 
