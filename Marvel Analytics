@@ -89,4 +89,21 @@ ORDER BY popularityChange
 
 
 
-#4. 
+#4. Find the sum of strength, speed, and durability each for all superheroes that are taller than 1.90m and heavier than 100kg.
+WITH superheroes_with_top_physics AS (
+    SELECT name,
+           height_m,
+           weight_kg,
+           strength,
+           speed,
+           durability
+    FROM marvels
+    GROUP BY name
+    HAVING height_m > 1.90 and weight_kg > 100
+    ORDER BY name)
+
+SELECT 'Potential Avengers Team' AS group_name,
+       sum(strength),
+       sum(speed),
+       sum(durability)
+FROM superheroes_with_top_physics
