@@ -107,3 +107,16 @@ SELECT 'Potential Avengers Team' AS group_name,
        sum(speed),
        sum(durability)
 FROM superheroes_with_top_physics
+
+
+
+#5. Find the one superhero that has both energy projection and fighting skills higher than average.
+SELECT *
+FROM marvels
+WHERE energy_projection > (SELECT avg(energy_projection) FROM marvels)
+AND fighting_skills > (SELECT avg(fighting_skills) FROM marvels)
+
+
+
+#6. 
+
