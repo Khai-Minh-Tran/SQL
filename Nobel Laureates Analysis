@@ -1,0 +1,26 @@
+## Source: https://www.kaggle.com/datasets/nobelfoundation/nobel-laureates
+
+## I renamed a few columns
+ALTER TABLE nobel
+RENAME column 'Laureate Type' TO laureate_type
+
+ALTER TABLE nobel
+RENAME column 'Prize Share' TO prize_share
+
+ALTER TABLE nobel
+RENAME column 'Birth Date' TO birth_date
+
+ALTER TABLE nobel
+RENAME column 'Full Name' TO full_name
+
+ALTER TABLE nobel
+RENAME column 'Birth City' TO birth_city
+
+ALTER TABLE nobel
+RENAME column 'Birth Country' TO birth_country
+
+ALTER TABLE nobel
+RENAME column 'Organization Name' TO organization_name
+
+ALTER TABLE nobel
+RENAME column 'Organization City' TO organization_city
