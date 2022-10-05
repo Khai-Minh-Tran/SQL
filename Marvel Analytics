@@ -116,7 +116,3 @@ FROM marvels
 WHERE energy_projection > (SELECT avg(energy_projection) FROM marvels)
 AND fighting_skills > (SELECT avg(fighting_skills) FROM marvels)
 
-
-
-
-
