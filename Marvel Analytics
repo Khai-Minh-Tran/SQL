@@ -118,5 +118,5 @@ AND fighting_skills > (SELECT avg(fighting_skills) FROM marvels)
 
 
 
-#6. 
+
 
