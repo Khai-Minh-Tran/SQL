@@ -59,7 +59,7 @@ SELECT sum(
           then 1 else 0 end) as num_deceased
 FROM astronauts
 
-
+----------
 
 # 2. Which astronauts studied Engineering, for both undergraduate and graduate levels, at a member school of the Texas public college system?
 SELECT name, 
@@ -71,7 +71,14 @@ WHERE undergraduate_major like '%Engineering%'
 AND graduate_major like '%Engineering%'
 AND alma_mater like '%Texas%' 
 
+----------
 
-
-# 3. Who were born in the Midwest?
-S
+# 3. Out of all astronauts who majored in Electrical Engineering for undergraduate, find all who chose not to continue in same field for graduate level.
+SELECT name, 
+       undergraduate_major,
+       graduate_major  
+FROM astronauts
+WHERE name IN (SELECT name FROM astronauts WHERE undergraduate_major = 'Electrical Engineering')
+AND graduate_major != 'Electrical Engineering'
+GROUP BY name
+ORDER BY name
