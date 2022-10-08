@@ -42,7 +42,7 @@ FROM BIT_DB.Spotifydata
 GROUP BY artist_name
 ORDER BY avg(energy) DESC;
 
-
+----------
 
 #2. Who are the top 10 artists based on popularity?
 SELECT artist_name,
@@ -52,7 +52,7 @@ GROUP BY artist_name
 ORDER BY avg(popularity) DESC
 LIMIT 10;
 
-
+----------
 
 #3. What are the top 10 tracks based on popularity?
 SELECT artist_name, 
@@ -62,7 +62,7 @@ FROM BIT_DB.Spotifydata
 ORDER BY popularity DESC
 LIMIT 10;
 
-
+----------
 
 #4. What are the top 5 longest songs (also convert milliseconds to seconds)? 
 SELECT artist_name, 
@@ -72,7 +72,7 @@ FROM BIT_DB.Spotifydata
 ORDER BY length_by_second DESC
 LIMIT 10;
 
-
+----------
 
 #5. How many songs have acousticness higher and lower than 0.02?
 SELECT SUM(
@@ -83,7 +83,7 @@ SELECT SUM(
          THEN 1 ELSE 0 END) AS tracks_lower
 FROM BIT_DB.Spotifydata
 
-
+----------
 
 #6. How do we categorize tracks into "Fast", "Medium", or "Slow" ratings based on their tempos?
 SELECT artist_name, track_name,
@@ -95,7 +95,7 @@ SELECT artist_name, track_name,
         FROM BIT_DB.SpotifyData
         ORDER BY tempo_speed DESC;
         
-        
+ ----------       
         
  #7. How many tracks can be categorized into "High", "Medium", or "Low" ratings based on their liveness?
 SELECT sum(
@@ -110,7 +110,7 @@ SELECT sum(
           THEN 1 ELSE 0 END) AS low_liveness
 FROM BIT_DB.SpotifyData;
 
-
+----------
 
 #8. Calculate the average popularity for all artists. For every artist with an average popularity of 90 and above, show their names, their 
 ##  average popularities, and label them as 'Ultra Popular Star.'
