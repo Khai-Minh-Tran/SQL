@@ -60,7 +60,7 @@ SELECT avg(height_m),
 FROM marvels 
 WHERE gender = 'Male'
 
-
+----------
 
 #2. Out of all superheroes from Earth, select all with good or neutral alignments and order them by popularity.
 SELECT popularity, 
@@ -73,7 +73,7 @@ WHERE alignment IN ("Good", "Neutral")
 AND hometown NOT IN ("Jotunheim", "Asgard")
 ORDER BY popularity DESC
 
-
+----------
 
 #3. If alignment is good, increase popularity by 20%. If neutral, increase by 5%. If bad, decrease by 20%.
 SELECT name, 
@@ -87,7 +87,7 @@ END AS popularityChange
 FROM marvels 
 ORDER BY popularityChange
 
-
+----------
 
 #4. Find the sum of strength, speed, and durability each for all superheroes that are taller than 1.90m and heavier than 100kg.
 WITH superheroes_with_top_physics AS (
@@ -108,7 +108,7 @@ SELECT 'Potential Avengers Team' AS group_name,
        sum(durability)
 FROM superheroes_with_top_physics
 
-
+----------
 
 #5. Find the one superhero that has both energy projection and fighting skills higher than average.
 SELECT *
